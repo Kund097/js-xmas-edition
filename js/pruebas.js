@@ -5,8 +5,7 @@ probarValidarDescripcionRegalo();
 
 function probarValidarNombre() {
 
-    let arrayPrueba = [];
-    arrayPrueba.length = 51;
+    let cadenaPrueba = 'holaholaholaholaholaholaholaholaholaholaholaholaholaholaholahola';
 
     console.assert(
 
@@ -24,7 +23,7 @@ function probarValidarNombre() {
 
     console.assert(
 
-        validarNombre(arrayPrueba) === 'El nombre no debe tener mas de 50 caracteres',
+        validarNombre(cadenaPrueba) === 'El nombre no debe tener mas de 50 caracteres',
         'validarNombre no validó que nombre tenga menos de 50 caracteres'
 
     )
@@ -76,12 +75,11 @@ function probarValidarDescripcionRegalo() {
 
     )
 
-    let arrayPrueba = [];
-    arrayPrueba.length = 260;
+    let cadenaPrueba = 'holaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholaholahola';
 
     console.assert(
 
-        validarDescripcionRegalo(arrayPrueba) === 'Este campo no debe tener mas de 250 caracteres',
+        validarDescripcionRegalo(cadenaPrueba) === 'Este campo no debe tener mas de 250 caracteres',
         'validarDescripcionRegalo no validó que se ingrese menos de 250 caracteres en descripcion del regalo'
 
     )
