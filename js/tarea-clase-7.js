@@ -2,12 +2,12 @@ const $botonEnviarCarta = document.querySelector('#enviar-carta');
 
 $botonEnviarCarta.onclick = function(event) {
 
+    event.preventDefault();
+
     validarNombre(obtenerNombreUsuario());
     validarCiudad(obtenerCiudadUsuario());
     validarComportamiento(obtenerComportamiento());
     validarDescripcionRegalo(obtenerDescripcionRegalo());
-    
-    event.preventDefault();
 
 }
 
