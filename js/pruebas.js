@@ -5,12 +5,9 @@ probarValidarDescripcionRegalo();
 
 function probarValidarNombre() {
 
-    let arrayPrueba = [];
-    arrayPrueba.length = 51;
-
     console.assert(
 
-        validarNombre('') === 'Este campo no debe estar vacio',
+        validarNombre('') === 'El nombre no debe estar vacio',
         'validarNombre no validó que nombre este vacío'
 
     )
@@ -24,15 +21,22 @@ function probarValidarNombre() {
 
     console.assert(
 
-        validarNombre(arrayPrueba) === 'El nombre no debe tener mas de 50 caracteres',
+        validarNombre('11111111111111111111111111111111111111111111111111') === 'El nombre no debe tener mas de 50 caracteres',
         'validarNombre no validó que nombre tenga menos de 50 caracteres'
 
     )
     
     console.assert(
 
-        validarNombre('21323321') === 'Este campo solo acepta letras',
-        'validarNombre no validó que nombre solo contenga solamente letras'
+        validarNombre('21323321') === 'El nombre solo acepta letras',
+        'validarNombre no validó que nombre solo contenga letras'
+
+    )
+
+    console.assert(
+
+        validarNombre('Facundo') === '',
+        'validarNombre no validó un nombre correcto'
 
     )
 
@@ -47,6 +51,13 @@ function probarValidarCiudad() {
 
     )
 
+    console.assert(
+
+        validarCiudad('Santa fe') === '',
+        'validarCiudad no validó que se ingrese un valor correcto'
+
+    )
+
 }
 
 function probarValidarComportamiento() {
@@ -58,38 +69,49 @@ function probarValidarComportamiento() {
 
     )
 
+    console.assert(
+
+        validarComportamiento('maso') === '',
+        'validarComportamiento no validó que se ingrese un comportamiento válido'
+
+    )
+
 }
 
 function probarValidarDescripcionRegalo() {
 
     console.assert(
 
-        validarDescripcionRegalo('') === 'Este campo no puede estar vacio', 
+        validarDescripcionRegalo('') === 'El campo descripcion regalo no puede estar vacio', 
         'validarDescripcionRegalo no validó que se ingrese vacio en descripcion del regalo'
 
     )
 
     console.assert(
 
-        validarDescripcionRegalo('abc') === 'Este campo debe tener al menos 4 caracteres', 
+        validarDescripcionRegalo('abc') === 'El campo descripcion regalo debe tener al menos 4 caracteres', 
         'validarDescripcionRegalo no validó que se ingresen al menos 4 caracteres en descripcion del regalo'
 
     )
 
-    let arrayPrueba = [];
-    arrayPrueba.length = 260;
-
     console.assert(
 
-        validarDescripcionRegalo(arrayPrueba) === 'Este campo no debe tener mas de 250 caracteres',
+        validarDescripcionRegalo('11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111') === 'El campo descripcion regalo no debe tener mas de 250 caracteres',
         'validarDescripcionRegalo no validó que se ingrese menos de 250 caracteres en descripcion del regalo'
 
     )
 
     console.assert(
 
-        validarDescripcionRegalo('141414141') === 'Este campo solo acepta letras',
-        'validarDescripcionRegalo no validó que se ingrese solamente letras en descripcion regalo'
+        validarDescripcionRegalo(',.,.,.,.,.') === 'El campo descripcion regalo solo acepta letras y numeros',
+        'validarDescripcionRegalo no validó que se ingrese solo letras y numeros'
+
+    )
+
+    console.assert(
+
+        validarDescripcionRegalo('Hola santa quiero un...') === '',
+        'validarDescripcionRegalo no validó que se ingrese una descripcion válida'
 
     )
 
